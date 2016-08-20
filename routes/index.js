@@ -7,10 +7,12 @@ var jobApi = require('../data/trademe-jobs-api');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+
     jobApi.getAllRegionData().then(function(resp){
-      console.log(resp);
-      var categories = ["accounting", "engineering", "painting"];
-      res.render('index', { title: 'Express' , categories: categories, regions: resp});
+      apiIds.getJobCatagoryIds()
+        .then((catagories) => {
+          res.render('index', { title: 'Express' , categories: catagories, regions: resp});
+        });
     });
 });
 

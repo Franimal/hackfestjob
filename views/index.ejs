@@ -68,31 +68,44 @@
 </header>
 
 <div id="masthead">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <p class="lead"></p>
-                </h1>
-            </div>
-            <div class="col-md-12">
-                <div class="well well-lg">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <!-- Search bar / Drop down list -->
-                            <div class="form-group">
-                                <label for="sel1">Select Category:</label>
-                                <select class="form-control" id="sel1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                            <!-- Search bar / Drop down list END -->
-                        </div>
-                    </div>
-                </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-12">
+        <div class="well well-lg">
+          <div class="row" style="text-align:center">
+            <div class="col-sm-12">
+<!-- Search bar / Drop down list -->
+
+            <form action="/" method = "GET">
+              <label >Category:</label>
+              <select class="form-control" name="category" 
+                    style = "display: table-cell;
+                      border-bottom-right-radius: 0;
+                      border-top-right-radius: 0;
+                      border: 0;
+                      vertical-align: middle;
+                      width:50%;
+                      position: relative;"> 
+                  <option value="" disabled="disabled" selected="selected">Please select a name</option>
+                  <% for(var i=0; i<categories.length; i++) {%>
+                    <option value= <%= categories[i].id %> ><%= categories[i].name %> </option>
+                  <% } %>
+              <input type="submit" value="Submit" class="btn btn-default" 
+                        style = " white-space: normal;
+                                  position: relative;
+                                  height:34px;
+                                  border-bottom-left-radius: 0;
+                                  border-top-left-radius: 0;
+                                  vertical-align: middle">
+                      </button>
+              </select>
+
+            </form>
+<!-- Search bar / Drop down list END -->
             </div>
         </div>
     </div><!-- /cont -->
