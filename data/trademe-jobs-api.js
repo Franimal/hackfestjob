@@ -1,5 +1,5 @@
 var request = require('request-promise-native');
-var apiIds = require('../trademe-ids');
+var apiIds = require('./trademe-ids');
 
 function getListingCount(regionId, categoryId) {
 
