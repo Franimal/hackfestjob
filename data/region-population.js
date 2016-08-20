@@ -7,7 +7,7 @@ module.export = {
   "Gisborne": 43938,
   "Hawke's Bay": 156018,
   "Taranaki": 110079,
-  "Manawatu-Wanganui": 225411,
+  "Manawatu / Wanganui": 225411,
   "Wellington": 478290,
   "Nelson / Tasman": 99702,
   "Marlborough": 46302,
