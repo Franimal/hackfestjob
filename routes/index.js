@@ -32,10 +32,8 @@ router.get('/', function (req, res, next) {
         jobcount: 90000,
         jobratio: '1:4'
     }];
-    trademe. getLocationIds().then(function(locations){
     var categories = ["accounting", "engineering", "painting"];
     res.render('index', { title: 'Express' , categories: categories, regions: regionData});
-  });
 
 });
 
