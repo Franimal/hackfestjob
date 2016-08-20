@@ -14,6 +14,19 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="/stylesheets/styles.css" rel="stylesheet">
+
+		<link href="/stylesheets/hipster_cards.css" rel="stylesheet"/>
+
+    <!--     Fonts and icons     -->
+    <link href="/fonts/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display|Raleway:700,100,400|Roboto:400,700|Playfair+Display+SC:400,700' rel='stylesheet' type='text/css'>
+
+    <style>
+        .card{
+            margin-bottom: 70px;
+        }
+    </style>
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -25,22 +38,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">Home</a>
+      <a href="/" class="navbar-brand">Mahi</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <li>
+			<!--
+			  <li>
           <a href="#">Category</a>
         </li>
-        <li>
-          <a href="#">Category</a>
-        </li>
-        <li>
-          <a href="#">Category</a>
-        </li>
-        <li>
-          <a href="#">Category</a>
-        </li>
+
       </ul>
       <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
@@ -51,6 +57,7 @@
             </form>
           </ul>
         </li>
+			-->
       </ul>
     </nav>
   </div>
@@ -124,102 +131,66 @@
 
 
           <!--/stories-->
-          <div class="row">
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/58.jpg" style="width:100px;height:100px" class="img-circle"></a>
-            </div>
-            <div class="col-md-10 col-sm-9">
-              <h3>Repurpose Content to Reach a Wider Audience</h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default">97thfloor.com</span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted">2 hours ago  • <a href="#" class="text-muted">Read More</a></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
-          </div>
-          <hr>
+					<div class="masonry-container">
 
-          <div class="row">
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/women/56.jpg" style="width:100px;height:100px" class="img-circle"></a>
-            </div>
-            <div class="col-md-10 col-sm-9">
-              <h3>14 Useful Sites for Designers</h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default">devgarage.com</span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted">Yesterday • <a href="#" class="text-muted">Read More</a></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
-          </div>
-          <hr>
 
-          <div class="row">
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/29.jpg" style="width:100px;height:100px" class="img-circle"></a>
-            </div>
-            <div class="col-md-10 col-sm-9">
-              <h3>Measuring Your Link Building with Google Analytics</h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default">searchenginewatch.com</span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted">Yesterday • <a href="#" class="text-muted">Read More</a></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
-          </div>
-          <hr>
+						<div class="card-box col-md-3 col-sm-4">
+								<div class="card card-just-text card-with-border" data-background="image" data-src="/img/skytower.jpg">
+										<div class="content">
+												<h4 class="title title-modern">Auckland</h4>
+												<p class="description">Population: 1 million</p>
+										</div>
+										<div class="filter"></div>
+								</div> <!-- end card -->
+						</div>
 
-          <div class="row">
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/women/56.jpg" style="width:100px;height:100px" class="img-circle"></a>
-            </div>
-            <div class="col-md-10 col-sm-9">
-              <h3>Dramatically Raise the Value of Any Piece of Content with These 27 Tactics</h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default">searchenginewatch.com</span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted">2 days ago • <a href="#" class="text-muted">Read More</a></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
-          </div>
-          <hr>
+						<div class="card-box col-md-3 col-sm-4">
+								<div class="card card-just-text card-with-border" data-background="image" data-src="/img/skytower.jpg">
+										<div class="content">
+												<h4 class="title title-modern">Auckland</h4>
+												<p class="description">Population: 1 million</p>
+										</div>
+										<div class="filter"></div>
+								</div> <!-- end card -->
+						</div>
 
-          <div class="row">
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/29.jpg" style="width:100px;height:100px" class="img-circle"></a>
-            </div>
-            <div class="col-md-10 col-sm-9">
-              <h3>TrendPaper - What's Trending in the World</h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default">betali.st</span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted">Last week • <a href="#" class="text-muted">Read More</a></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
-          </div>
-          <hr>
-          <!--/stories-->
 
+						<div class="card-box col-md-3 col-sm-4">
+								<div class="card card-just-text card-with-border" data-background="image" data-src="/img/skytower.jpg">
+										<div class="content">
+												<h4 class="title title-modern">Auckland</h4>
+												<p class="description">Population: 1 million</p>
+										</div>
+										<div class="filter"></div>
+								</div> <!-- end card -->
+						</div>
+
+
+						<div class="card-box col-md-3 col-sm-4">
+								<div class="card card-just-text card-with-border" data-background="image" data-src="/img/skytower.jpg">
+										<div class="content">
+												<h4 class="title title-modern">Auckland</h4>
+												<p class="description">Population: 1 million</p>
+										</div>
+										<div class="filter"></div>
+								</div> <!-- end card -->
+						</div>
+
+
+						<div class="card-box col-md-3 col-sm-4">
+								<div class="card card-just-text card-with-border" data-background="image" data-src="/img/skytower.jpg">
+										<div class="content">
+												<h4 class="title title-modern">Auckland</h4>
+												<p class="description">Population: 1 million</p>
+										</div>
+										<div class="filter"></div>
+								</div> <!-- end card -->
+						</div>
+
+
+	        </div>
+
+	    </div>
 
           <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
 
@@ -275,6 +246,32 @@
 </footer>
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="/js/bootstrap.min.js"></script>
+
+		<script src="/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="/js/hipster-cards.js"></script>
+
+		<!--  Just for demo	 -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
+
+		<script>
+
+	    	$().ready(function(){
+
+	        	var $container = $('.masonry-container');
+
+	            doc_width = $(document).width();
+
+	            if (doc_width >= 768){
+	                $container.masonry({
+	                    itemSelector        : '.card-box',
+	                    columnWidth         : '.card-box',
+	                    transitionDuration  : 0
+	                });
+	            } else {
+	                $('.mas-container').removeClass('mas-container').addClass('row');
+	            }
+	    	});
+		</script>
+
 	</body>
 </html>
