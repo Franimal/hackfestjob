@@ -1,9 +1,8 @@
 var request = require('request-promise-native');
 var apiIds = require('./trademe-ids');
+var secret = require("../env");
 
 function getListingCount(regionId, categoryId) {
-
-    return new Promise(function(resolve, reject){
       var options = {
           method: 'GET',
           url: 'https://api.trademe.co.nz/v1/Search/Jobs.json',
@@ -14,17 +13,14 @@ function getListingCount(regionId, categoryId) {
           json: true
       };
 
-      request(options)
+      return request(options)
       .then(function(resp){
-          resolve(resp.TotalCount);
+          return resp.TotalCount;
       })
       .catch(function (err) { reject(err); });
-    });
 }
 
 function getListingCountByRegion(regionId) {
-
-    return new Promise(function(resolve, reject){
       var options = {
           method: 'GET',
           url: 'https://api.trademe.co.nz/v1/Search/Jobs.json',
@@ -34,28 +30,33 @@ function getListingCountByRegion(regionId) {
           },
           json: true
       };
-
-      request(options)
+      return request(options)
       .then(function(resp){
-          resolve(resp.TotalCount);
-      })
-      .catch(function (err) { reject(err); });
-    });
+          return resp.TotalCount;
+      });
 }
 
 function getAllRegionData(){
-      var localities = apiIds.getLocationIds();
-      var regionData = [];
-      var promises = [];
-      for(var i = 0; i < localities.length; i++){
-        var count = getListingCountByRegion(localities[i].id).then(function(resp){
-            regionData[i] = {name: localities[i].name, id: localities[i].id, jobcount: data, jobratio: -500};
-        });
-      }
-      return regionData;
+   return new Promise(function(resolve, reject){
+
+     apiIds.getLocationIds().then(function(localities){
+       var regionData = [];
+       var promises = localities.map(function(val){
+           return getListingCountByRegion(val.id);
+       });
+
+       Promise.all(promises).then(function(resp){
+         for(var i = 0; i < resp.length; i++){
+            regionData.push({name: localities[i].name, id: localities[i].id, jobcount: resp[i], jobratio: -500});
+         }
+         resolve(regionData);
+       });
+     });
+   });
 }
 
 module.exports = {
+    getListingCount: getListingCount,
     getListingCountByRegion: getListingCountByRegion,
     getAllRegionData: getAllRegionData
 }
