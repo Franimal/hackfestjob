@@ -21,7 +21,7 @@ footer {
   padding-top:40px;
   padding-bottom:40px;
   background-color:#cecece;
- 
+
 }
 
 
@@ -82,7 +82,7 @@ a,a:hover {
 }
 
 .navbar-bright {
-  background-color:#111166;
+  background-color:#189ed9;
   color:#fff;
   margin-bottom: 0;
   border-width: 0;
@@ -157,7 +157,7 @@ a,a:hover {
   padding:6px;
   color:#fff;
 }
-    
+
 .btn-twitter {background-color:#4099FF;color:#fff;}
 .btn-facebook {background-color:#3B5998;color:#fff;}
 .btn-google-plus {background-color:#d34836;color:#fff;}
