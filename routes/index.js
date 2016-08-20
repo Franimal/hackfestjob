@@ -17,26 +17,46 @@ function requestNumListings(regionId, categoryId) {
     };
 
     return request(options).then((data) => {
-            return data.TotalCount;
-})
-    ;
-}
+        return data.TotalCount;
+    });
+};
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
     requestNumListings(100, 5001).then((data) => {
         console.log(data);
-    var regionData = [{name: 'Auckland', id: 1, jobcount: 500, jobratio: '1:4'}, {
-        name: 'Wellington',
-        id: 2,
-        jobcount: 90000,
-        jobratio: '1:4'
-    }];
-    var categories = ["accounting", "engineering", "painting"];
-    res.render('index', { title: 'Express' , categories: categories, regions: regionData});
+        var regionData = [{name: 'Auckland', id: 1, jobcount: 500, jobratio: '1:4'}, {
+            name: 'Wellington',
+            id: 2,
+            jobcount: 90000,
+            jobratio: '1:4'
+        },
+            {name: 'Auckland', id: 1, jobcount: 500, jobratio: '1:4'}, {
+                name: 'Wellington',
+                id: 2,
+                jobcount: 90000,
+                jobratio: '1:4'
+            },
+            {name: 'Auckland', id: 1, jobcount: 500, jobratio: '1:4'}, {
+                name: 'Wellington',
+                id: 2,
+                jobcount: 90000,
+                jobratio: '1:4'
+            },
+            {name: 'Auckland', id: 1, jobcount: 500, jobratio: '1:4'}, {
+                name: 'Wellington',
+                id: 2,
+                jobcount: 90000,
+                jobratio: '1:4'
+            }];
+        var categories = ["accounting", "engineering", "painting"];
+        res.render('index', { title: 'Express' , categories: categories, regions: regionData});
 
+    });
 });
 
+router.get('/cards', function(req, res, next){
+    res.render('cards');
 });
 
 module.exports = router;

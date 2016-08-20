@@ -82,14 +82,16 @@ a,a:hover {
 }
 
 .navbar-bright {
+  font-family: Montserrat-Light;
+  font-size: 14px;
+  color: #FFFFFF;
   background-color:#189ed9;
-  color:#fff;
   margin-bottom: 0;
   border-width: 0;
 }
 
 .navbar-bright a, .navbar-bright .navbar-brand, #masthead h4 {
-  color:#ccccdd;
+  color:#FFFFFF;
   font-size:14px;
   text-transform: uppercase;
   letter-spacing:.08em;
