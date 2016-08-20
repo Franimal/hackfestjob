@@ -7,17 +7,25 @@ var jobApi = require('../data/trademe-jobs-api');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+  var category = req.query.category;
 
-    jobApi.getAllRegionData().then(function(resp){
-      apiIds.getJobCatagoryIds()
-        .then((catagories) => {
-          res.render('index', { title: 'Express' , categories: catagories, regions: resp});
-        });
+  var promise;
+  if (category === undefined) {
+    promise = jobApi.getAllRegionData();
+  } else {
+    promise = jobApi.getAllRegionDataByCategory(category);
+  }
+
+  promise.then(function(resp){
+    apiIds.getJobCatagoryIds()
+    .then((catagories) => {
+      res.render('index', { title: 'Express' , categories: catagories, regions: resp});
     });
+  });
 });
 
 router.get('/cards', function(req, res, next){
-    res.render('cards');
+  res.render('cards');
 });
 
 module.exports = router;

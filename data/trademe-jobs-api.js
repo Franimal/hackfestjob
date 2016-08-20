@@ -55,8 +55,28 @@ function getAllRegionData(){
    });
 }
 
+function getAllRegionDataByCategory(catagoryId){
+   return new Promise(function(resolve, reject){
+
+     apiIds.getLocationIds().then(function(localities){
+       var regionData = [];
+       var promises = localities.map(function(val){
+           return getListingCount(val.id, catagoryId);
+       });
+
+       Promise.all(promises).then(function(resp){
+         for(var i = 0; i < resp.length; i++){
+            regionData.push({name: localities[i].name, id: localities[i].id, jobcount: resp[i], jobratio: -500});
+         }
+         resolve(regionData);
+       });
+     });
+   });
+}
+
 module.exports = {
     getListingCount: getListingCount,
     getListingCountByRegion: getListingCountByRegion,
-    getAllRegionData: getAllRegionData
+    getAllRegionData: getAllRegionData,
+    getAllRegionDataByCategory: getAllRegionDataByCategory
 }
