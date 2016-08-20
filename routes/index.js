@@ -24,6 +24,7 @@ function requestNumListings(regionId, categoryId) {
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+    console.log(req.query.category);
     requestNumListings(100, 5001).then((data) => {
         console.log(data);
     var regionData = [{name: 'Auckland', id: 1, jobcount: 500, jobratio: '1:4'}, {
