@@ -4,6 +4,7 @@ var request = require('request-promise-native');
 var secret = require('../env');
 var apiIds = require('../data/trademe-ids.js');
 
+
 function requestNumListings(regionId, categoryId) {
     var options = {
         method: 'GET',
@@ -31,7 +32,11 @@ router.get('/', function (req, res, next) {
         jobcount: 90000,
         jobratio: '1:4'
     }];
-    res.render('index', {title: 'Express', regions: regionData});
+    trademe. getLocationIds().then(function(locations){
+    var categories = ["accounting", "engineering", "painting"];
+    res.render('index', { title: 'Express' , categories: categories, regions: regionData});
+  });
+
 });
 
 });
