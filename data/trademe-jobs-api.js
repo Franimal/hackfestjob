@@ -1,6 +1,8 @@
 var request = require('request-promise-native');
 var apiIds = require('./trademe-ids');
 var secret = require("../env");
+var regions = require("./region-data");
+var utils = require("./util");
 
 function getListingCount(regionId, categoryId) {
       var options = {
@@ -47,7 +49,11 @@ function getAllRegionData(){
 
        Promise.all(promises).then(function(resp){
          for(var i = 0; i < resp.length; i++){
-            regionData.push({name: localities[i].name, id: localities[i].id, jobcount: resp[i], jobratio: -500});
+           console.log(localities[i].name);
+           var population = regions.population[localities[i].name];
+           var unemployment = regions.unemployment[localities[i].name];
+           var ratio = utils.getRatio(resp[i], unemployment);
+           regionData.push({name: localities[i].name, id: localities[i].id, population: population, unemployment: unemployment, jobcount: resp[i], jobratio: ratio});
          }
          resolve(regionData);
        });
@@ -56,7 +62,7 @@ function getAllRegionData(){
 }
 
 function getAllRegionDataByCategory(catagoryId){
-   return new Promise(function(resolve, reject){
+   return new Promise(function(resolve, reject){m
 
      apiIds.getLocationIds().then(function(localities){
        var regionData = [];
@@ -66,7 +72,10 @@ function getAllRegionDataByCategory(catagoryId){
 
        Promise.all(promises).then(function(resp){
          for(var i = 0; i < resp.length; i++){
-            regionData.push({name: localities[i].name, id: localities[i].id, jobcount: resp[i], jobratio: -500});
+           var population = regions.population[localities[i].name];
+           var unemployment = regions.unemployment[localities[i].name];
+           var ratio = utils.getRatio(resp[i], unemployment);
+           regionData.push({name: localities[i].name, id: localities[i].id, population: population, unemployment: unemployment, jobcount: resp[i], jobratio: ratio});
          }
          resolve(regionData);
        });
