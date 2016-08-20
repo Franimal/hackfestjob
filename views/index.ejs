@@ -80,7 +80,7 @@
             <div class="col-sm-12">
 <!-- Search bar / Drop down list -->
 
-            <form action="/" method = "GET">
+            <form action="/categories" method = "GET">
               <label >Category:</label>
               <select class="form-control" name="category" 
                     style = "display: table-cell;
@@ -92,7 +92,7 @@
                       position: relative;"> 
                   <option value="" disabled="disabled" selected="selected">Please select a name</option>
                   <% for(var i=0; i<categories.length; i++) {%>
-                    <option><%= categories[i] %></option>
+                    <option value= <%= categories[i].id %> ><%= categories[i].name %> </option>
                   <% } %>
               <input type="submit" value="Submit" class="btn btn-default" 
                         style = " white-space: normal;

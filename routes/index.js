@@ -51,7 +51,7 @@ router.get('/', function (req, res, next) {
                 jobratio: '1:4'
             }];
         var categories = ["accounting", "engineering", "painting"];
-        res.render('index', { title: 'Express' , categories: categories, regions: regionData});
+        res.render('index', { title: 'Express' , categories: regionData, regions: regionData});
 
     });
 });
