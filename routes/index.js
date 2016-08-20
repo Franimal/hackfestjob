@@ -50,8 +50,10 @@ router.get('/', function (req, res, next) {
                 jobcount: 90000,
                 jobratio: '1:4'
             }];
-        var categories = ["accounting", "engineering", "painting"];
-        res.render('index', { title: 'Express' , categories: regionData, regions: regionData});
+      apiIds.getJobCatagoryIds()
+        .then((catagories) => {
+          res.render('index', { title: 'Express' , categories: catagories, regions: regionData});
+        });
 
     });
 });
