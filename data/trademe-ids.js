@@ -11,6 +11,7 @@ function getLocationIds() {
         if(entry.Name !== 'All'){
               localities.push({name: entry.Name, id: entry.LocalityId});
         }
+        break; // remove me later when quota is not a problem
       }
       console.log(localities);
       resolve(localities);
