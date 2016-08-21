@@ -1,6 +1,9 @@
 /* override bootstrap styles */
 @import url('http://fonts.googleapis.com/css?family=Oswald:300,400:latin,latin-ext');
 
+
+@font-face { font-family: Montserrat-Regular; src: url('/fonts/Montserrat-Regular.otf'); }
+
 .navbar-form input, .form-inline input {
   width:auto;
 }
@@ -8,7 +11,6 @@
 body {
   padding-top:50px;
   color:#646464;
-  background-color:#efefef;
 }
 
 h1,h2,h3,.highlight,.navbar a,#masthead h4 {
@@ -27,7 +29,7 @@ footer {
 
 #masthead {
   min-height:199px;
-  background-color:#000044;
+  background-color:#FFFFFF;
   color:#aaaacc;
 }
 
