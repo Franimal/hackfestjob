@@ -52,7 +52,13 @@ function getAllRegionData(){
            var population = regions.population[localities[i].name];
            var unemployment = regions.unemployment[localities[i].name];
            var ratio = utils.getRatio(resp[i], unemployment);
-           regionData.push({name: localities[i].name, id: localities[i].id, population: population, unemployment: unemployment, jobcount: resp[i], jobratio: ratio});
+           regionData.push({name: localities[i].name,
+             id: localities[i].id,
+             population: utils.formatNum(population),
+             unemployment: utils.formatNum(unemployment),
+             jobcount: resp[i],
+             jobratio: ratio
+           });
          }
          resolve(utils.sortRegions(regionData));
        });
@@ -74,7 +80,13 @@ function getAllRegionDataByCategory(catagoryId){
            var population = regions.population[localities[i].name];
            var unemployment = regions.unemployment[localities[i].name];
            var ratio = utils.getRatio(resp[i], unemployment);
-           regionData.push({name: localities[i].name, id: localities[i].id, population: population, unemployment: unemployment, jobcount: resp[i], jobratio: ratio});
+           regionData.push({name: localities[i].name,
+             id: localities[i].id,
+             population: utils.formatNum(population),
+             unemployment: utils.formatNum(unemployment),
+             jobcount: resp[i],
+             jobratio: ratio
+           });
          }
          resolve(utils.sortRegions(regionData));
        });
