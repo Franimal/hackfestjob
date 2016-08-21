@@ -1,9 +1,21 @@
 /* override bootstrap styles */
 @import url('http://fonts.googleapis.com/css?family=Oswald:300,400:latin,latin-ext');
+@font-face{font-family: Montserrat-Regular; src: url('/fonts/Montserrat-Regular.otf');}
+@font-face{font-family: Montserrat-SemiBold; src: url('/fonts/Montserrat-SemiBold.otf');}
 
+.region-data p{
+font-size:12px;
+color:#454545;
+font-weight: regular;
+font-family: Montserrat-Regular;
+}
 
-@font-face { font-family: Montserrat-Regular; src: url('/fonts/Montserrat-Regular.otf'); }
+.region-data h5{
+font-size:30px;
+color:#189ed9;
+font-family: Montserrat-SemiBold;
 
+}
 .navbar-form input, .form-inline input {
   width:auto;
 }
@@ -41,7 +53,7 @@ footer {
 }
 
 #masthead .well {
-  margin-top:31px;
+  margin-top:0px;
   background-color:#111166;
   border-color:#000022;
   color:#efefff;

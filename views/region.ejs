@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title><%= title %></title>
-    <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/stylesheets/dropdown.css" rel="stylesheet">
     <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link href="/stylesheets/styles.css" rel="stylesheet">
-  </head>
+
+    <link href="/stylesheets/hipster_cards.css" rel="stylesheet"/>
+
+    <!--     Fonts and icons     -->
+    <link href="/fonts/pe-icon-7-stroke.ttf" rel="stylesheet" />
+    <link href="/fonts/Montserrat-Light.otf" rel="stylesheet" />
+    <link href="/fonts/Montserrat-Regular.otf" rel="stylesheet" />
+    <link href="/fonts/Montserrat-SemiBold.otf" rel="stylesheet" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!--<link href='http://fonts.googleapis.com/css?family=Playfair+Display|Raleway:700,100,400|Roboto:400,700|Playfair+Display+SC:400,700' rel='stylesheet' type='text/css'>-->
+
+    <style>
+        .card{
+            margin-bottom: 70px;
+        }
+    </style>
+</head>
   <body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
   <div class="container">
@@ -56,63 +72,77 @@
 </header>
 
 <div id="masthead">
-  <div class="container">
+  <div class="">
     <div class="row">
-      <div class="col-md-7">
-          <p class="lead"></p>
-        </h1>
-      </div>
       <div class="col-md-12">
-        <div class="well well-lg">
+        <div class="well well-lg" style="height: 231px;">
           <div class="row" style="text-align:center">
             <div class="col-sm-12">
-<!-- Search bar / Drop down list -->
-
-            <form action="/" method = "GET">
-              <label >Category:</label>
-              <select class="form-control" name="category" 
-                    style = "display: table-cell;
-                      border-bottom-right-radius: 0;
-                      border-top-right-radius: 0;
-                      border: 0;
-                      vertical-align: middle;
-                      width:50%;
-                      position: relative;"> 
-                  <option value="" disabled="disabled" selected="selected">Please select a name</option>
-                  <% for(var i=0; i<categories.length; i++) {%>
-                    <option><%= categories[i] %></option>
-                  <% } %>
-              <input type="submit" value="Submit" class="btn btn-default" 
-                        style = " white-space: normal;
-                                  position: relative;
-                                  height:34px;
-                                  border-bottom-left-radius: 0;
-                                  border-top-left-radius: 0;
-                                  vertical-align: middle">
-                      </button>
-              </select>
-
-            </form>
-<!-- Search bar / Drop down list END -->
+            <!-- REGION TITLE-->
+              <h1>WELLINGTON</h1>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </div><!-- /cont -->
 
+
+<!-- single rectagle div -->
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="top-spacer"> </div>
+        <div class="top-spacer" style="height: 150px; z-index: 10; margin-top: -78px; padding-right: 0px; margin-right: 0px; margin-bottom: 200px;">
+
+          <div class="container-fluid">
+            <% for(var i = 0; i < regions.length; i++) { %>
+              <div class="row">
+              <div class="col-sm-2">
+              <div class="region-data" style="text-align: center; padding: 30px 0px;">
+                <h5><%= regions[i].jobs %></h5>
+                <p>Jobs</p>
+              </div>
+              </div>
+              <div class="col-sm-3">
+              <div class="region-data" style="text-align: center; padding: 30px 0px;">
+                <h5 ><%= regions[i].unemployed %></h5>
+                <p>Unemployed</p>
+              </div>
+              </div>
+              <div class="col-sm-2">
+              <div class="region-data"  style="text-align: center; padding: 30px 0px; ">
+                <h5><%= regions[i].ratio %></h5>
+                <p>Ratio</p>
+              </div>
+              </div>
+              <div class="col-sm-3">
+              <div class="region-data"  style="text-align: center; padding: 30px 0px;">
+                <h5><%= regions[i].ratio %></h5>
+                <p>Ratio</p>
+              </div>
+              </div>
+              <div class="col-sm-2">
+              <div class="region-data"  style="text-align: center; padding: 30px 0px;">
+                <h5><%= regions[i].salary %></h5>
+                <p>Salary</p>
+              </div>
+              </div>
+              </div>
+            <% } %>
+          </div>
       </div>
     </div>
+
   </div><!-- /cont -->
+
 
 </div>
 
 
-<div class="container">
+</div>
+<!-- Profile information div -->
+<div class="" style=" z-index: -1;" >
   <div class="row">
 
     <div class="col-md-12">
@@ -123,6 +153,7 @@
 
 
           <!--/stories-->
+
           <div class="row">
             <br>
             <div class="col-md-2 col-sm-3 text-center">
@@ -235,6 +266,7 @@
 
 <hr>
 
+<!--Footnot -->
 <div class="container" id="footer">
   <div class="row">
     <div class="col col-sm-12">

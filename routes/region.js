@@ -24,17 +24,18 @@ function requestNumListings(regionId, categoryId) {
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    console.log(req.query.category);
+    console.log("Hello");
     requestNumListings(100, 5001).then((data) => {
         console.log(data);
-        var regionData = [{name: 'Auckland', id: 1, jobcount: 500, jobratio: '1:4'}, {
-            name: 'Wellington',
-            id: 2,
-            jobcount: 90000,
-            jobratio: '1:4'
+        var regionData = [{
+            jobs: 1000,
+            unemployed: 2,
+            ratio: '1:3',
+            population: 10000,
+            salary:1000
         }];
         var categories = ["accounting", "engineering", "painting"];
-        res.render('index', { title: 'Express' , categories: categories, regions: regionData});
+        res.render('region', { title: 'Express' , categories: categories, regions: regionData});
 
     });
 
