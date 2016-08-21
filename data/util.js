@@ -25,7 +25,7 @@ function round(a){
 
 function sortRegions(regions) {
   return regions.sort((a, b) => {
-    return (b.jobcount /  b.unemployment)  - (a.jobcount /  a.unemployment);
+    return (b.jobcount /  b._unemployment)  - (a.jobcount /  a._unemployment);
   });
 }
 

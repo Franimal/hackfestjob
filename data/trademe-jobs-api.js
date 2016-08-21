@@ -56,6 +56,8 @@ function getAllRegionData(){
              id: localities[i].id,
              population: utils.formatNum(population),
              unemployment: utils.formatNum(unemployment),
+             _population: utils.formatNum(population),
+             _unemployment: utils.formatNum(unemployment),
              jobcount: resp[i],
              jobratio: ratio
            });
@@ -84,6 +86,8 @@ function getAllRegionDataByCategory(catagoryId){
              id: localities[i].id,
              population: utils.formatNum(population),
              unemployment: utils.formatNum(unemployment),
+             _population: population,
+             _unemployment: unemployment,
              jobcount: resp[i],
              jobratio: ratio
            });
