@@ -18,8 +18,7 @@ function getListingCount(regionId, categoryId) {
       return request(options)
       .then(function(resp){
           return resp.TotalCount;
-      })
-      .catch(function (err) { reject(err); });
+      });
 }
 
 function getListingCountByRegion(regionId) {
