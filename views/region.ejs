@@ -79,7 +79,7 @@
           <div class="row" style="text-align:center">
             <div class="col-sm-12">
             <!-- REGION TITLE-->
-              <h1>WELLINGTON</h1>
+            <h1><%= location %></h1>
             </div>
           </div>
         </div>
@@ -142,9 +142,9 @@
 
 
 </div>
-<div style="padding-left: 650px;>
+<div style="padding-left: 650px;">
 <!-- Search bar / Drop down list -->
-  <form action="/" method="GET" class="form-inline">
+<form action="/region/<%= regionId %>" method="GET" class="form-inline">
       <label style="font-family: Montserrat-Regular;
       font-size: 17px;
       margin-right: 10px;
@@ -196,7 +196,7 @@
 
           <!--/stories-->
           <div style="padding-left: 400px;" >
-            <p> Current Jobs in  </p>
+            <p> Current Jobs in <%= location %> </p>
 
             <div class="selection">
             <% for(var i = 0; i < job.length; i++) { %>
