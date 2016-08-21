@@ -71,7 +71,6 @@
 /*     General overwrite     */
 body {
   font-family: "Roboto","Helvetica","Arial", sans-serif;
-  background-color: #cccccc;
 }
 
 a {
@@ -503,7 +502,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .btn-social {
-  opacity: 0.93;
   padding: 8px 9px;
 }
 .btn-social .fa {
@@ -532,8 +530,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   padding:0px;
 }
 .city-data h5{
-  font-family: 'Oswald',arial narrow,sans-serif;
-  font-size: 21px;
+  font-family: Montserrat-Regular;
+  font-size: 19px;
   color: #189ED9;
   letter-spacing: -0.51px;
 }

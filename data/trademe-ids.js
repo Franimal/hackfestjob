@@ -8,7 +8,9 @@ function getLocationIds() {
       var localities = [];
       for (var index in resp) {
         var entry = resp[index];
-        localities.push({name: entry.Name, id: entry.LocalityId});
+        if(entry.Name !== 'All'){
+              localities.push({name: entry.Name, id: entry.LocalityId});
+        }
       }
       console.log(localities);
       resolve(localities);
