@@ -8,7 +8,7 @@ function getListingCount(regionId, categoryId) {
       var options = {
           method: 'GET',
           url: 'https://api.trademe.co.nz/v1/Search/Jobs.json',
-          qs: {category: categoryId, region: regionId},
+          qs: {category: categoryId, region: regionId, rows: 1},
           headers: {
               authorization: secret
           },
@@ -26,7 +26,7 @@ function getListingCountByRegion(regionId) {
       var options = {
           method: 'GET',
           url: 'https://api.trademe.co.nz/v1/Search/Jobs.json',
-          qs: {region: regionId},
+          qs: {region: regionId, rows: 1},
           headers: {
               authorization: secret
           },
