@@ -19,7 +19,7 @@ router.get('/', function (req, res, next) {
   promise.then(function(resp){
     apiIds.getJobCatagoryIds()
     .then((catagories) => {
-      res.render('index', { title: 'Express' , categories: catagories, regions: resp});
+      res.render('index', { title: 'Express' , categories: catagories, regions: resp, category: category ? category : ""});
     });
   });
 });

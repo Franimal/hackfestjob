@@ -92,10 +92,10 @@
                                           position: relative;
                                           background: #FFFFFF;
                                           border: 1px solid #EEEEEE;">
-                                    <option value="" disabled="disabled" selected="selected">Please select a name
+                                    <option value="" disabled="disabled" <% if (!category) {%>selected="selected"<%}%>>Please select a name
                                     </option>
                                     <% for(var i = 0; i < categories.length; i++) { %>
-                                    <option value= <%= categories[i].id %>><%= categories[i].name %> </option>
+                                    <option value= <%= categories[i].id %>  <% if (category == categories[i].id) {%> selected="selected" <%}%>><%= categories[i].name %></option>
                                     <% } %>
                                     <input type="submit" value="Select" class="btn btn-default"
                                            style="
