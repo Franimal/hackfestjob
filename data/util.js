@@ -1,8 +1,9 @@
 var gcd = require('gcd');
 
 function getRatio(a, b) {
-  var g = gcd(a,b);
-  return `${a / g}:${b / g}`;
+  var right = Math.round(b/a);
+  //var g = gcd(a,b);
+  return `1:${right}`;
 }
 
 function round(a){
