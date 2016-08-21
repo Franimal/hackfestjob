@@ -25,6 +25,8 @@ function requestNumListings(regionId, categoryId) {
 /* GET home page. */
 router.get('/', function (req, res, next) {
     console.log("Hello");
+    var category = req.query.category;
+    var location = req.query.location;
     requestNumListings(100, 5001).then((data) => {
         console.log(data);
         var regionData = [{
@@ -34,8 +36,15 @@ router.get('/', function (req, res, next) {
             population: 10000,
             salary:1000
         }];
+
+        var job = [{
+            Location: "Auckland",
+            title: "How to excel in interviews",
+            employer: "KiwiBanks",
+            description: " This is a job interviw. ASKJSJKDSJ. aThelaskcncl alksdjioqwejl;wm;lme asjdkasd. askdjjksdjkashkqwenmn ",
+        }];
         var categories = ["accounting", "engineering", "painting"];
-        res.render('region', { title: 'Express' , categories: categories, regions: regionData});
+        res.render('region', { title: 'Express' , job:job, categories: categories, regions: regionData});
 
     });
 

@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -11,7 +11,7 @@
     <link href="/stylesheets/dropdown.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]
+    <![endif]-->
     <link href="/stylesheets/styles.css" rel="stylesheet">
 
     <link href="/stylesheets/hipster_cards.css" rel="stylesheet"/>
@@ -160,13 +160,11 @@
                                     <div class="card-box col-sm-4 col-xs-11">
                                         <div class="card" data-background="image" data-src="/img/regions/<%= regions[i].id %>.png">
                                             <div class="header" style="height:180px;">
-
                                                 <div class="content">
                                                     <h4 class="title title-uppercase" style="text-align: center;">
                                                         <a href=""><%= regions[i].name %></a>
                                                     </h4>
                                                 </div>
-
                                                 <div class="social-line social-line-visible">
                                                     <div class="row" style="margin:0px; text-align:center">
                                                         <div class="col-xs-4 btn-social">
@@ -177,8 +175,8 @@
                                                         </div>
                                                         <div class="col-xs-4 btn-social">
                                                             <div class="city-data">
-                                                                <h5>2 million</h5>
-                                                                <p>Unemployment</p>
+                                                              <h5><%= regions[i].unemployed %></h5>
+                                                                <p>Unemployed</p>
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-4 btn-social">
@@ -189,7 +187,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -257,17 +254,13 @@
             <script src="/js/bootstrap.min.js" type="text/javascript"></script>
             <script src="/js/hipster-cards.js"></script>
 
-            <!--  Just for demo	 -->
+            <!--  Just for demo  -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
 
             <script>
-
                 $().ready(function () {
-
                     var $container = $('.masonry-container');
-
                     doc_width = $(document).width();
-
                     if (doc_width >= 768) {
                         $container.masonry({
                             itemSelector: '.card-box',
@@ -281,4 +274,4 @@
             </script>
 
 </body>
-</html> 
+</html>
