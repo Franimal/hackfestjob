@@ -6,7 +6,10 @@ function getRatio(a, b) {
 }
 
 function round(a){
-  var val = 10;
+  var val = 1;
+  if(a > 10){
+    val = 10;
+  }
   if(a > 100){
     val = 100;
   }
@@ -16,7 +19,14 @@ function round(a){
   return Math.round(a / val) * val;
 }
 
+function sortRegions(regions) {
+  return regions.sort((a, b) => {
+    return (b.jobcount /  b.unemployment)  - (a.jobcount /  a.unemployment);
+  });
+}
+
 module.exports = {
   getRatio: getRatio,
-  round: round
+  round: round,
+  sortRegions: sortRegions
 }

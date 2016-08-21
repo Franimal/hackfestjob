@@ -55,14 +55,14 @@ function getAllRegionData(){
            var ratio = utils.getRatio(utils.round(resp[i]), unemployment);
            regionData.push({name: localities[i].name, id: localities[i].id, population: population, unemployment: unemployment, jobcount: resp[i], jobratio: ratio});
          }
-         resolve(regionData);
+         resolve(utils.sortRegions(regionData));
        });
      });
    });
 }
 
 function getAllRegionDataByCategory(catagoryId){
-   return new Promise(function(resolve, reject){m
+   return new Promise(function(resolve, reject){
 
      apiIds.getLocationIds().then(function(localities){
        var regionData = [];
@@ -77,7 +77,7 @@ function getAllRegionDataByCategory(catagoryId){
            var ratio = utils.getRatio(utils.round(resp[i]), unemployment);
            regionData.push({name: localities[i].name, id: localities[i].id, population: population, unemployment: unemployment, jobcount: resp[i], jobratio: ratio});
          }
-         resolve(regionData);
+         resolve(utils.sortRegions(regionData));
        });
      });
    });
