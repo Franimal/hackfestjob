@@ -68,7 +68,7 @@
 <div id="masthead" style="width:100%;">
     <div class="">
         <div class="">
-            <div class="" style="padding:50px 0px; background:#efefef;">
+            <div class="" style="padding: 25px 0px; background: #fafafa;">
                 <div class="">
                     <div class="row" style="text-align:center">
                         <div class="col-sm-12">
@@ -127,10 +127,12 @@
 
                         <div class="panel">
 
-                          <div class="row">
+                          <div class="row" style="padding:50px;">
                             <div class="col-sm-12 text-center">
                               <% var sum = 0; for(var i = 0; i < regions.length; i++) { sum += regions[i].jobcount } %>
-                              <span><span><%= sum %></span> Jobs Available Now</span>
+                              <span style=" padding: 50px; font-family: Montserrat-Regular;font-size: 21px;letter-spacing: -0.51px; color:#454545;">
+                                  <span style="color: #189ED9;"><%= sum %></span>
+                                  Jobs Available Now</span>
 
                             </div>
                           </div>
