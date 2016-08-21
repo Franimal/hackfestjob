@@ -3,6 +3,34 @@
 @font-face{font-family: Montserrat-Regular; src: url('/fonts/Montserrat-Regular.otf');}
 @font-face{font-family: Montserrat-SemiBold; src: url('/fonts/Montserrat-SemiBold.otf');}
 
+.selection link{
+font-family: Montserrat-Regular;
+
+font-size: 14px;
+
+color: #189ED9;
+
+letter-spacing: -0.34px;
+}
+.selection h4{
+font-family: Montserrat-Regular;
+font-size: 14px;
+color: #454545;
+letter-spacing: -0.34px;
+}
+.selection h5{
+font-family: Montserrat-SemiBold;
+font-size: 17px;
+color: #454545;
+letter-spacing: -0.41px;
+}
+.selection p{
+opacity: 0.5;
+font-family: Montserrat-Light;
+font-size: 12px;
+color: #454545;
+letter-spacing: -0.29px;
+}
 .region-data p{
 font-size:12px;
 color:#454545;
@@ -53,7 +81,7 @@ footer {
 }
 
 #masthead .well {
-  margin-top:0px;
+  margin-top:31px;
   background-color:#111166;
   border-color:#000022;
   color:#efefff;

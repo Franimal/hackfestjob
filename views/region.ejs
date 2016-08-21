@@ -22,7 +22,7 @@
     <link href="/fonts/Montserrat-Regular.otf" rel="stylesheet" />
     <link href="/fonts/Montserrat-SemiBold.otf" rel="stylesheet" />
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
-    <!--<link href='http://fonts.googleapis.com/css?family=Playfair+Display|Raleway:700,100,400|Roboto:400,700|Playfair+Display+SC:400,700' rel='stylesheet' type='text/css'>-->
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display|Raleway:700,100,400|Roboto:400,700|Playfair+Display+SC:400,700' rel='stylesheet' type='text/css'>
 
     <style>
         .card{
@@ -93,7 +93,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="top-spacer" style="height: 150px; z-index: 10; margin-top: -78px; padding-right: 0px; margin-right: 0px; margin-bottom: 200px;">
+        <div class="top-spacer" style="height: 150px; z-index: 10; margin-top: -78px; padding-right: 0px; margin-right: 0px; margin-bottom: 100px;">
 
           <div class="container-fluid">
             <% for(var i = 0; i < regions.length; i++) { %>
@@ -140,8 +140,50 @@
 </div>
 
 
+
 </div>
+<div style="padding-left: 650px;>
+<!-- Search bar / Drop down list -->
+  <form action="/" method="GET" class="form-inline">
+      <label style="font-family: Montserrat-Regular;
+      font-size: 17px;
+      margin-right: 10px;
+      color: #454545;
+      ">Job Category </label>
+      <select class="form-control" name="category"
+              style="display: table-cell;
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border: 0;
+                vertical-align: middle;
+                width:33%;
+                position: relative;
+                background: #FFFFFF;
+                border: 1px solid #EEEEEE;">
+          <option value="" disabled="disabled" <% if (!categories) {%>selected="selected"<%}%>>Please select a name
+          </option>
+          <% for(var i = 0; i < categories.length; i++) { %>
+          <option value= <%= categories[i].id %>  <% if (categories == categories[i].id) {%> selected="selected" <%}%>><%= categories[i].name %></option>
+          <% } %>
+          <input type="submit" value="Select" class="btn btn-default"
+                 style="
+                 height:34px;
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                vertical-align: middle;
+                background: #189ED9;
+                font-size: 14px;
+                color: #FFFFFF;">
+          </input>
+      </select>
+
+  </form>
 <!-- Profile information div -->
+</div>
 <div class="" style=" z-index: -1;" >
   <div class="row">
 
@@ -153,105 +195,22 @@
 
 
           <!--/stories-->
+          <div style="padding-left: 400px;" >
+            <p> Current Jobs in  </p>
 
-          <div class="row">
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/58.jpg" style="width:100px;height:100px" class="img-circle"></a>
-            </div>
-            <div class="col-md-10 col-sm-9">
-              <h3>Repurpose Content to Reach a Wider Audience</h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default">97thfloor.com</span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted">2 hours ago  • <a href="#" class="text-muted">Read More</a></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
-          </div>
-          <hr>
+            <div class="selection">
+            <% for(var i = 0; i < job.length; i++) { %>
 
-          <div class="row">
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/women/56.jpg" style="width:100px;height:100px" class="img-circle"></a>
-            </div>
-            <div class="col-md-10 col-sm-9">
-              <h3>14 Useful Sites for Designers</h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default">devgarage.com</span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted">Yesterday • <a href="#" class="text-muted">Read More</a></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
-          </div>
-          <hr>
+              <p>  <%= job[i].location %></p>
+              <h5> <%= job[i].title %></h5>
+              <p>  <%= job[i].employer %> </p>
+              <h4> <%= job[i].description%></h4>
 
-          <div class="row">
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/29.jpg" style="width:100px;height:100px" class="img-circle"></a>
+            <% } %>
             </div>
-            <div class="col-md-10 col-sm-9">
-              <h3>Measuring Your Link Building with Google Analytics</h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default">searchenginewatch.com</span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted">Yesterday • <a href="#" class="text-muted">Read More</a></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
+            <a class="link" href=""> Visit our site </a>
           </div>
-          <hr>
-
-          <div class="row">
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/women/56.jpg" style="width:100px;height:100px" class="img-circle"></a>
-            </div>
-            <div class="col-md-10 col-sm-9">
-              <h3>Dramatically Raise the Value of Any Piece of Content with These 27 Tactics</h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default">searchenginewatch.com</span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted">2 days ago • <a href="#" class="text-muted">Read More</a></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
-          </div>
-          <hr>
-
-          <div class="row">
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/29.jpg" style="width:100px;height:100px" class="img-circle"></a>
-            </div>
-            <div class="col-md-10 col-sm-9">
-              <h3>TrendPaper - What's Trending in the World</h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default">betali.st</span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted">Last week • <a href="#" class="text-muted">Read More</a></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
-          </div>
-          <hr>
           <!--/stories-->
-
-
-          <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
 
 
         </div>
