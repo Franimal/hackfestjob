@@ -29,8 +29,14 @@ function sortRegions(regions) {
   });
 }
 
+// http://stackoverflow.com/questions/9345136/1000000-to-1m-and-1000-to-1k-and-so-on-in-js
+function formatNum(n,d){x=(''+n).length,p=Math.pow,d=p(10,d)
+x-=x%3
+return Math.round(n*d/p(10,x))/d+" kMGTPE"[x/3]}
+
 module.exports = {
   getRatio: getRatio,
   round: round,
+  formatNum: formatNum,
   sortRegions: sortRegions
 }
