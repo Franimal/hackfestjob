@@ -3,6 +3,9 @@ var gcd = require('gcd');
 function getRatio(a, b) {
   var right = Math.round(b/a);
   //var g = gcd(a,b);
+  if(a == 0){
+    return '-';
+  }
   return `1:${right}`;
 }
 
